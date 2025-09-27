@@ -1,1 +1,12 @@
-<h1>Index</h1>
+<div class="container">
+  <h1>My Blog</h1>
+  <a href="/compose" class="btn">+ New Post</a>
+
+  <% posts.forEach(function(post){ %>
+  <div class="post">
+    <h2><a href="/posts/<%= post.title %>"><%= post.title %></a></h2>
+    <p><%= post.content.substring(0, 150) %>...</p>
+    <a href="/posts/<%= post.title %>" class="read-more">Read More</a>
+  </div>
+  <% }) %>
+</div>

@@ -5,9 +5,14 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
+
+let posts = [];
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", {
+        posts: posts,
+    });
 })
 
 app.listen(port, () => {
