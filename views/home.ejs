@@ -1,23 +1,19 @@
+<%- include("partials/header") %>
 
+<h1 class="mb-4">My Blog Posts</h1>
 
-<div class="container">
-  <h1>My Blog</h1>
-  <a href="/post" class="btn">+ New Post</a>
-  <hr>
-  <% if (posts.length === 0) { %>
-    <p>No posts yet. Create your first one!</p>
-  <% } else { %>
-    <% posts.forEach(function(post){ %>
-      <div class="post">
-        <h2><a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
-        <p><%= post.content.substring(0, 120) %>...</p>
-        <div class="actions">
-          <a href="/edit/<%= post.id %>" class="edit-btn">Edit</a>
-          <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
-            <button type="submit" class="delete-btn">Delete</button>
-          </form>
-        </div>
+<% if (posts.length === 0) { %>
+  <p>No posts yet. <a href="/compose">Create one here.</a></p>
+<% } else { %>
+  <% posts.forEach(post => { %>
+    <div class="card mb-3 shadow-sm">
+      <div class="card-body">
+        <h3><a href="/posts/<%= post.title.toLowerCase().split(' ').join('-') %>" class="text-dark text-decoration-none"><%= post.title %></a></h3>
+        <p><%= post.content.substring(0, 150) %>...</p>
+        <a href="/posts/<%= post.title.toLowerCase().split(' ').join('-') %>" class="btn btn-outline-primary btn-sm">Read More</a>
       </div>
-    <% }) %>
-  <% } %>
-</div>
+    </div>
+  <% }) %>
+<% } %>
+
+<%- include("partials/footer") %>
