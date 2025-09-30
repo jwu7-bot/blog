@@ -31,4 +31,18 @@ Posts are stored temporarily in memory (no database).
    git clone https://github.com/<your-username>/<your-repo-name>.git
    cd <your-repo-name>
    ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Start the server**
+   ```bash
+   node index.js
+   ```
+4. **Open your browser**
+   ```
+   http://localhost:3000
+   ```
+   
+   
 
