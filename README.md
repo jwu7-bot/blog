@@ -1,4 +1,4 @@
-# Simple Blog Website 📰
+# Simple Blog Website 
 
 A basic blog web application built with **Node.js**, **Express.js**, and **EJS**.  
 Users can create, view, edit, and delete blog posts.  
@@ -28,8 +28,8 @@ Posts are stored temporarily in memory (no database).
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/<your-username>/<your-repo-name>.git
-   cd <your-repo-name>
+   git clone https://github.com/jwu7-bot/Blog.git
+   cd Blog
    ```
 2. **Install dependencies**
    ```bash
